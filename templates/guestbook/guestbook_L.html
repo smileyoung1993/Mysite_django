@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+{% load mathfilters %}
+
+{% block css_link %}
+	<link href="/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+    {% block content %}
+        <div id="guestbook">
+            {% for guestbook in guestbook_list %}
+                    <ul>
+                        <li>
+                            <table>
+                                <tr>
+                                    <td>{{ guestbook_list.count | add:1 | sub:forloop.counter }}</td>
+                                    <td>{{ guestbook.name }}</td>
+                                    <td>{{ guestbook.regdate|date:'Y-m-d H:i:s' }}</td>
+                                    <td><a href="/guestbook/deleteform?id={{ guestbook.id }}">삭제</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan=4>{{ guestbook.message|linebreaksbr }}</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+            {% endfor %}
+            <ul> <a href="/guestbook"><input type="button" value="메인으로 돌아가기"></a></ul>
+        </div>
+	{% endblock %}
