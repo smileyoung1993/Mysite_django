@@ -18,6 +18,7 @@ from django.urls import path
 import user.views as user_view
 import main.views as main_view
 import guestbook.views as guestbook_view
+import board.views as board_view
 
 
 urlpatterns = [
@@ -38,6 +39,14 @@ urlpatterns = [
     path('user/loginform/', user_view.loginform),
     path('user/login', user_view.login),
     path('user/logout',user_view.logout),
+
+    # board
+    path('board/',board_view.list),
+    path('board/modify',board_view.modify),
+    path('board/view',board_view.view),
+    path('board/write',board_view.write),
+
+
 
     path('admin/', admin.site.urls),  # view 이름이 site
 

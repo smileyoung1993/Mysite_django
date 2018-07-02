@@ -30,6 +30,7 @@ def loginform(request):
 
 
 def login(request):
+
     # 쿼리를 부른다.
     result = User.objects.filter(email = request.POST['email']).filter(password = request.POST['password'])
 
