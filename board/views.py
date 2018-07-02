@@ -9,6 +9,8 @@ def writeform(request):
 
     if request.session['authuser'] is None:
         return HttpResponseRedirect('/user/loginform')# 로그인 안됫으면 회원가입 폼으로간다.
+    else:
+        return render(request,'board/write.html')
 
 def list(request):
 
