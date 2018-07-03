@@ -45,8 +45,7 @@ urlpatterns = [
     path('board/modify',board_view.modify),
     path('board/view',board_view.view),
     path('board/write',board_view.write),
-
-
+    path('board/add',board_view.add),
 
     path('admin/', admin.site.urls),  # view 이름이 site
 
