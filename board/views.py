@@ -25,9 +25,10 @@ def modify(request):
     return render(request,'board/modify.html')
 
 def view(request):
-
+    # board_list = Board.objects.GET.get(id = request.POST['id'])
     id = request.GET.get('id',False)
-    context = { 'id': id }
+    board_list = Board.objects.filter(id=id) # mysql에서 글번호만을 filter함
+    context = { 'board_list': board_list }
     return render(request,'board/view.html',context)
 
 # def viewform(request):
