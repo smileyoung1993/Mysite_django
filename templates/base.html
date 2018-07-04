@@ -28,9 +28,15 @@
 		</div>
 		<div id="navigation">
 			<ul>
-				<li><a href="/">안대혁</a></li>
-				<li><a href="/guestbook">방명록</a></li>
-				<li><a href="/board">게시판</a></li>
+				{% if request.session.authuser is None %}
+					<li><a href="/">안대혁</a></li>
+					<li><a href="/guestbook">방명록</a></li>
+					<li><a href="/user/joinform">게시판</a></li>
+				{% else %}
+					<li><a href="/">안대혁</a></li>
+					<li><a href="/guestbook">방명록</a></li>
+					<li><a href="/board">게시판</a></li>
+				{% endif %}
 			</ul>
 		</div>
 		<div id="footer">

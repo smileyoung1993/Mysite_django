@@ -5,6 +5,7 @@ from user.models import User
 
 
 class Board(models.Model):
+
     title = models.CharField(max_length= 200)
     content = models.CharField(max_length=2000)
     hit = models.IntegerField(default=0)#값이없으면 디폴트값
