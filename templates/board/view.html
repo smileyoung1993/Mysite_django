@@ -23,9 +23,25 @@
 						</td>
 					</tr>
 				</table>
+				{% if board.user_id is request.session.authuser.id %}
 				<div class="bottom">
 					<a href="/board">글목록</a>
 					<a href="/board/modify?id={{ board.id }}">글수정</a>
 				</div>
+					{% else %}
+					<div class ="bottom">
+						<tr>
+							<h2 align="center">수정 할 권한이 없습니다.</h2>
+						</tr>
+						<tr>
+							<br>
+
+							</br>
+						</tr>
+						<tr>
+							<td><a href="/user/loginform"><input type="button" align="middle" value="로그인"></a></td>
+						</tr>
+					</div>
+				{% endif %}
 			</div>
 		{% endblock %}

@@ -87,6 +87,8 @@ def view(request):
     hit_update(board) # 조회수 올리는 함수 hit_update호출
     context = { 'board' : board }
     print(board.title)
+    print("dlsdud: ",board.user_id)
+    print(request.session['authuser']['id'])
     return render(request,'board/view.html',context)
 
 # def viewform(request):
