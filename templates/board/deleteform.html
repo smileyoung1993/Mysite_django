@@ -1,0 +1,37 @@
+{% extends "../base.html" %}
+
+{% block css_link %}
+	<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+		{% block content %}
+			<div id="board">
+				<form method="post" action="/board/delete">{% csrf_token %}
+				<input type='hidden' name="id" value="{{ board.id }}">
+				<center>
+                    {% if board.user_id is request.session.authuser.id %}
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password" name="password"></td>
+						<td><input type="submit" value="확인"></td>
+					</tr>
+                    {% else %}
+                    <tr>
+                        <h2 align="center">삭제 할 권한이 없습니다.</h2>
+                    </tr>
+                    <tr>
+                        <br>
+
+                        </br>
+                    </tr>
+                    <tr>
+                        <td><a href="/board"><input type="button" align="middle" value="Back"></a></td>
+                    </tr>
+                </center>
+
+                    {% endif %}
+				</table>
+                </form>
+			</div>
+
+		{% endblock %}

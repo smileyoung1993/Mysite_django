@@ -1,0 +1,7 @@
+{% for guestbook in guestbook_list %}
+
+guestbook_list --><QuerySet [<Board: Board(22222, 22211, 1, 2018-07-05 12:40:36+00:00, 1)>]>
+guestbook --> Board(22222, 22211, 1, 2018-07-05 12:40:36+00:00, 1)
+
+board_list = Board.objects.filter(id=id) --> <QuerySet [<Board: Board(22222, 22211, 1, 2018-07-05 12:40:36+00:00, 1)>]>
+board_list[0] --> Board(22222, 22211, 1, 2018-07-05 12:40:36+00:00, 1)

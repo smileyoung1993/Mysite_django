@@ -37,7 +37,7 @@ def login(request):
     # 로그인 실패
     if len(result) == 0:
         return HttpResponseRedirect('/user/loginform?result=False')
-
+    print(result[0])
     # 로그인 성공할 때만 저장(인증처리)
     authuser= result[0]
 

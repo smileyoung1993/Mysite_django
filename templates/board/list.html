@@ -27,7 +27,7 @@
                   <td>{{ board.user.name }}</td>
                   <td>{{ board.hit }}</td>
                   <td>{{ board.regdate|date:'Y-m-d H:i:s' }}</td>
-                  <td><a href="" class="del">삭제</a></td>
+                  <td><a href="/board/deleteform?id={{ board.id }}"><img id="delete" src="/assets/images/recycle.png"> </a></td>
                </tr>
                {% endfor %}
 
