@@ -55,9 +55,9 @@ def modify(request):
     return render(request,'board/modify.html',context)
 
 def update(request):
-    #
+
     # if 'id' in request.GET:
-    id = request.POST['id']
+    id = request.POST['id'] # modify.html에서 hidden으로 board.id로 보내줘야 post방식으로 가져올수있다.
     print(id)
     board = Board.objects.get(id=id)# get방식으로 줬으므로 pk에 해당하는 row 하나만가져온다
     board.title = request.POST['title']
